@@ -1,6 +1,7 @@
 console.log("SBA Time, yay");
 
 const todoList = document.getElementById("todoList");
+const addTask = document.getElementById("addTask");
 const welcome = document.getElementById("welcome")
 
 /**
@@ -99,9 +100,10 @@ todoList.addEventListener("click", (evt) =>{
     }
 })
 
-// todoList.addEventListener("click", (evt) =>{
-//     if (evt.target.localName === "ul"){
-//         evt.target.textContent = changeText(evt.target.textContent);
-//         // addSubTask(evt.target);
-//     }
-// })
+addTask.addEventListener("click", (evt) =>{
+    if (evt.target.localName === "addTask"){
+        console.log("You clicked a button");
+        const addTask = window.prompt("How many task would you like to add? (Max is 10)");
+        createListItem(addTask);
+    }
+})
