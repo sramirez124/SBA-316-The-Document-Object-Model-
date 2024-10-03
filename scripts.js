@@ -43,9 +43,17 @@ function createListItem(numOfIems){
                 // creates the list of items expected
                 const taskID = taskNumber;
                 const taskText = document.createElement("h2");
+                taskText.setAttribute("id", "todoListTask");
                 taskText.textContent = ("Task " + taskID);
                 taskNumber++;
-    
+
+                const imageX = document.createElement("IMG");
+                imageX.setAttribute("src", "images/gie5B478T.png");
+                imageX.setAttribute("id", "deleteImage")
+                imageX.setAttribute("width", "25");
+                imageX.setAttribute("height", "25");
+                imageX.setAttribute("alt", "Delete this task");
+
                 const taskDetails = document.createElement('h3');
                 taskDetails.textContent = "Click here to add your task name";
 
@@ -55,6 +63,7 @@ function createListItem(numOfIems){
     
                 // appends everything
                 ol.appendChild(taskText);
+                taskText.appendChild(imageX);
                 ol.appendChild(taskDetails);
                 ol.appendChild(subDetails);
                 
@@ -85,14 +94,14 @@ function addSubTask(target){
  */
 
 todoList.addEventListener("click", (evt) =>{
-    if (evt.target.localName === "h3"){
+    if (evt.target.localName === "h3" || evt.target.localName === "ul"){
         evt.target.textContent = changeText(evt.target.textContent);
     }
 })
 
-todoList.addEventListener("click", (evt) =>{
-    if (evt.target.localName === "ul"){
-        evt.target.textContent = changeText(evt.target.textContent);
-        // addSubTask(evt.target);
-    }
-})
+// todoList.addEventListener("click", (evt) =>{
+//     if (evt.target.localName === "ul"){
+//         evt.target.textContent = changeText(evt.target.textContent);
+//         // addSubTask(evt.target);
+//     }
+// })
