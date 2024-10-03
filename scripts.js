@@ -3,12 +3,9 @@ console.log("SBA Time, yay");
 const todoList = document.getElementById("todoList");
 const welcome = document.getElementById("welcome")
 
-
-
 /**
  * Welcome Prompt
  */
-
 
 const userName = window.prompt("Hello! To start, what is your name?");
 welcome.textContent = ("Welcome " + userName + " lets get to work!");
@@ -37,7 +34,7 @@ function createListItem(numOfIems){
     
     for (let i = 1; i <= numOfIems; i++) {
         const div = document.createElement('div');
-        
+
         for (let k = 1; k <= 1; k++) {
             const ol = document.createElement("ol");
 
@@ -63,7 +60,7 @@ function createListItem(numOfIems){
     }
 }
 
-function changeTaskText(taskText){
+function changeText(taskText){
     console.log(taskText);
     textInput = window.prompt("Enter task information here");
     taskText = textInput;
@@ -76,6 +73,6 @@ function changeTaskText(taskText){
 
 todoList.addEventListener("click", (evt) =>{
     if (evt.target.localName === "h3"){
-        evt.target.textContent = changeTaskText(evt.target.textContent);
+        evt.target.textContent = changeText(evt.target.textContent);
     }
 })
