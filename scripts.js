@@ -2,7 +2,9 @@ console.log("SBA Time, yay");
 
 const todoList = document.getElementById("todoList");
 const addTask = document.getElementById("addTask");
-const welcome = document.getElementById("welcome")
+const welcome = document.getElementById("welcome");
+
+let taskNumber = 1;
 
 /**
  * Welcome Prompt
@@ -17,15 +19,15 @@ initialStart();
  */
 function initialStart(){
     const taskListStart = window.prompt("How many task would you like to add? (Max is 10)");
-    console.log("TakeListStart is a" , typeof(taskListStart));
+    // console.log("TakeListStart is a" , typeof(taskListStart));
     createListItem(taskListStart)
 }
 
 
 function createListItem(numOfIems){
-    const taskListMax = 10;
+    const taskListMax = 11;
     numOfIems = parseInt(numOfIems);
-    let taskNumber = 1;
+    
     // console.log("numOfItems being created" , numOfIems);
 
     if(numOfIems + taskNumber > taskListMax){
@@ -42,11 +44,14 @@ function createListItem(numOfIems){
             for (let j = 0; j < 1; j++) {
                 
                 // creates the list of items expected
-                const taskID = taskNumber;
+                console.log("Before loop taskNumber is" , taskNumber);
+                let taskID = taskNumber;
                 const taskText = document.createElement("h2");
                 taskText.setAttribute("id", "todoListTask");
                 taskText.textContent = ("Task " + taskID);
                 taskNumber++;
+                console.log("After loop taskNumber is" , taskNumber);
+                console.log("Task ID is: " , taskID);
 
                 const imageX = document.createElement("IMG");
                 imageX.setAttribute("src", "images/gie5B478T.png");

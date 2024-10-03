@@ -7,13 +7,13 @@ html body {
 
   .navbar{
     background: #181818;
-    width: 100%;
+    width: auto;
     padding-bottom: 10px;
   }
 
   .sidebar{
     background: #181818;
-    height: 1000px;
+    height: auto;
     width: 200px;
     padding-right: 10px;
   }
