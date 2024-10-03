@@ -23,7 +23,6 @@ function initialStart(){
     createListItem(taskListStart)
 }
 
-
 function createListItem(numOfIems){
     const taskListMax = 11;
     numOfIems = parseInt(numOfIems);
