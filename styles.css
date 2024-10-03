@@ -1,7 +1,23 @@
-body {
-    background-color: #181818;
+html body {
+    background: #121212;
     color: CanvasText;
     color-scheme: light dark;
     font-family: Helvetica;
+  }
+
+  .navbar{
+    background: #181818;
+    height: 50px;
+    padding-bottom: 10px;
+  }
+
+  .sidebar{
+    background: #181818;
+    width: 100px;
+    padding-right: 10px;
+  }
+
+  #todoList{
+    padding-left: 20px;
   }
   
