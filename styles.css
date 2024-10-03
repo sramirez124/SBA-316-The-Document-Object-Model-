@@ -14,12 +14,11 @@ html body {
   .sidebar{
     background: #181818;
     height: 1000px;
-    width: 100px;
+    width: 200px;
     padding-right: 10px;
   }
 
-  /* #todoList{
-    padding-left: 200px;
-    margin: 10px;
-  } */
+  #todoList{
+    margin: 20px;
+  }
   

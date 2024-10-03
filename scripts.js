@@ -47,11 +47,16 @@ function createListItem(numOfIems){
                 taskNumber++;
     
                 const taskDetails = document.createElement('h3');
-                taskDetails.textContent = "Click here to add your task details";
+                taskDetails.textContent = "Click here to add your task name";
+
+                const subDetails = document.createElement("ul");
+                subDetails.setAttribute("id", "subtask");
+                subDetails.textContent = "Click to details/subtask to the task"
     
                 // appends everything
                 ol.appendChild(taskText);
                 ol.appendChild(taskDetails);
+                ol.appendChild(subDetails);
                 
             }
             div.appendChild(ol);
@@ -67,6 +72,14 @@ function changeText(taskText){
     return taskText;
 }
 
+function addSubTask(target){
+    const newSubTask = document.createElement("ul");
+    newSubTask.setAttribute("id", "subtask");
+    newSubTask.textContent = "Click to details/subtask to the task";
+    newSubTask.appendChild(target);
+    return target;
+}
+
 /**
  * Event Listeners
  */
@@ -74,5 +87,12 @@ function changeText(taskText){
 todoList.addEventListener("click", (evt) =>{
     if (evt.target.localName === "h3"){
         evt.target.textContent = changeText(evt.target.textContent);
+    }
+})
+
+todoList.addEventListener("click", (evt) =>{
+    if (evt.target.localName === "ul"){
+        evt.target.textContent = changeText(evt.target.textContent);
+        // addSubTask(evt.target);
     }
 })
