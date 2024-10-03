@@ -1,9 +1,9 @@
 console.log("SBA Time, yay");
 
-const todoList = document.querySelector("todoList");
+const todoList = document.getElementById("todoList");
 const welcome = document.getElementById("welcome")
 
-const taskListMax = 10;
+
 
 /**
  * Welcome Prompt
@@ -22,19 +22,34 @@ function initialStart(){
 
 
 function createListItem(numOfIems){
-    if(numOfIems === typeof(string)){
-        console.log("numOfItems is a" , typeof(numOfIems));
-        parseInt(numOfIems);
-        console.log("numOfItems is a" , typeof(numOfIems));
-    }
-    // for (let i = 0; i < 1; i++) {
-    //     const tr = document.createElement('tr');
-        
-    //     for (let j = 0; j < 3; j++) {
-    //         const element = array[j];
-            
-    //     }
+    const taskListMax = 10;
+    numOfIems = parseInt(numOfIems);
+    let taskNumber = 1;
+    // console.log("numOfItems being created" , numOfIems);
+
+    if(numOfIems + taskNumber > taskListMax){
+        window.confirm("You can only have 10 items on the list, you already have " + taskNumber + " and are trying to add " + numOfIems);
+    } else 
     
-    //     todoList.appendChild(tr);
-    // }
+    for (let i = 0; i < 1; i++) {
+        const div = document.createElement('div');
+        
+        for (let j = 1; j <= numOfIems; j++) {
+            // creates the list of items expected
+            const ol = document.createElement("ol");
+            const taskText = document.createElement("h2");
+            taskText.textContent = ("Task " + taskNumber);
+            taskNumber++;
+
+            const taskDetails = document.createElement('h3');
+            taskDetails.textContent = "Click here to add your task details";
+
+            // appends everything
+            ol.appendChild(taskText);
+            ol.appendChild(taskDetails);
+            div.appendChild(ol);
+        }
+    
+        todoList.appendChild(div);
+    }
 }
