@@ -20,3 +20,8 @@ function validateForm(){
 
     }
 }
+
+addEventListener("submit", (evt) => {
+    validateForm()
+    window.open("index.html");
+})
