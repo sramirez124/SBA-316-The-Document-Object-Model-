@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="validation.js"></script>
     <title>Register</title>
 
     <!--Bootstrap-->
@@ -12,8 +13,8 @@
 </head>
 <body>
     <div class="container" style="border-radius: 2px solid black;">
-      <form>
-        <img src="../images/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" 
+      <form name="registration" id="registration" onsubmit="return validateForm()">
+        <img src="images/login-icon-3048.png" height="200" width="200" 
         alt="">
 
         <div class="input-group mb-3">
@@ -23,7 +24,7 @@
           </div>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control-sm" placeholder="Your Email" required>
+            <input type="email" class="form-control-sm" placeholder="Your Email" required>
               <select class="form-select-sm" id="sel1" name="sellist">
                 <option>@gmail.com</option>
                 <option>@outlook.com</option>
@@ -34,14 +35,14 @@
 
         <div class="input-group mb-3 needs-validation" novalidate>
             <span class="input-group-text">@</span>
-            <input type="text" class="form-control-sm" id="Username" placeholder="Username" minlength="5" required>
+            <input type="text" class="form-control-sm" id="Username" placeholder="Username" required>
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Please fill out this field.</div>
           </div>
 
           <div class="input-group mb-3">
             <span class="input-group-text">Password</span>
-            <input type="password" class="form-control-sm" id="inputPassword4" placeholder="Password" required>
+            <input type="password" class="form-control-sm" id="inputPassword4" placeholder="Password" minlength="6" maxlength="12" required>
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Please fill out this field.</div>
           </div>

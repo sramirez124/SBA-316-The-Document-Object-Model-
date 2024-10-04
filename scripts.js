@@ -4,6 +4,7 @@ const todoList = document.getElementById("todoList");
 const addTask = document.getElementById("addTask");
 const welcome = document.getElementById("welcome");
 
+
 let taskNumber = 1;
 
 /**
@@ -96,6 +97,8 @@ function addSubTask(target){
     newSubTask.appendChild(target);
     return target;
 }
+
+
 
 /**
  * Event Listeners
