@@ -43,14 +43,11 @@ function createListItem(numOfIems){
             for (let j = 0; j < 1; j++) {
                 
                 // creates the list of items expected
-                console.log("Before loop taskNumber is" , taskNumber);
+                //console.log("Before loop taskNumber is" , taskNumber);
                 let taskID = taskNumber;
-                const taskText = document.createElement("h2");
                 taskText.setAttribute("id", "todoListTask");
                 taskText.textContent = ("Task " + taskID);
                 taskNumber++;
-                console.log("After loop taskNumber is" , taskNumber);
-                console.log("Task ID is: " , taskID);
 
                 const imageX = document.createElement("IMG");
                 imageX.setAttribute("src", "images/gie5B478T.png");
@@ -86,6 +83,11 @@ function changeText(taskText){
     return taskText;
 }
 
+/**
+ * This function is not working correctly and has been removed
+ * The function was suppose to allow people to change the subtask text and add another
+ * placeholder to add more task.
+ */
 function addSubTask(target){
     const newSubTask = document.createElement("ul");
     newSubTask.setAttribute("id", "subtask");
