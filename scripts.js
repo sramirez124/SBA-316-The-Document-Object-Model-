@@ -36,7 +36,7 @@ function createListItem(numOfIems){
     
     for (let i = 1; i <= numOfIems; i++) {
         const div = document.createElement('div');
-
+        console.log("this fired");
         for (let k = 1; k <= 1; k++) {
             const ol = document.createElement("ol");
 
@@ -45,6 +45,7 @@ function createListItem(numOfIems){
                 // creates the list of items expected
                 //console.log("Before loop taskNumber is" , taskNumber);
                 let taskID = taskNumber;
+                const taskText = document.createElement("h3");
                 taskText.setAttribute("id", "todoListTask");
                 taskText.textContent = ("Task " + taskID);
                 taskNumber++;
